@@ -52,7 +52,9 @@ This plugin aims to preserve the API of _redux-observable_ and therefore most of
 
 There are however a couple of differences to the original API due to the inherent architectural difference between _Vuex_ and _Redux_:
 
-1. By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
+#### Epic's Outputs
+
+By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
 
 ```js
 (action$, store$, { ofType, mapTo }) =>
@@ -74,7 +76,9 @@ There are however a couple of differences to the original API due to the inheren
 // => Triggers the action 'SOME_OTHER_ACTION'
 ```
 
-2. The second argument passed to the epic is not only an observable of the _state$_ but the _store$_, which contains both the _state_ and _getters_. For instance:
+#### Store stream
+
+The second argument passed to the epic is not only an observable of the `state$` but the `store$`, which contains both the _state_ and _getters_. For instance:
 
 ```js
 (action$, store$, { ofType, map }) =>
@@ -87,14 +91,16 @@ There are however a couple of differences to the original API due to the inheren
   );
 ```
 
-3. A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are asynchronous and running them both in parallel would result in race conditions and unpredictable behaviour.
+#### Dispatching actions vs epics
+
+A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are asynchronous and running them both in parallel would result in race conditions and unpredictable behaviour.
 
 ## Important performance relates notes
 
 When the state gets very large (thousands of object) or if state mutations happen extremely often, then the store might start suffering in performance. This is due to the state mutability differences between _Vuex_ and _Redux_ (Vuex's state is mutable while Redux's is not).
 
-The plugin must therefore check if the state has actually changed on every dispatched epic in order to conform to the _redux-observable_ api, which will expect a new object refrenece if the state has actually changed (so it can emit a store stream event).
+The plugin must therefore check if the state has actually changed on every dispatched epic in order to conform to the _redux-observable_ api, which will expect a new object reference if the state has actually changed (so it can emit a store stream event).
 
 There could be ways to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
 
-That being said, in most use cases, this will not be a noticable issue.
+That being said, in most use cases, this would not be a noticable issue.
