@@ -52,7 +52,7 @@ This plugin aims to preserve the API of _redux-observable_ and therefore most of
 
 There are however a couple of differences to the original API due to the inherent architectural difference between _Vuex_ and _Redux_:
 
-1. By default, the epics receive an _action_ as input and return a _mutation_ as output. However, it is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
+1. By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
 
 ```js
 (action$, store$, { ofType, mapTo }) =>
@@ -95,4 +95,6 @@ When the state gets very large (thousands of object) or if state mutations happe
 
 The plugin must therefore check if the state has actually changed on every dispatched epic in order to conform to the _redux-observable_ api, which will expect a new object refrenece if the state has actually changed (so it can emit a store stream event).
 
-There could be a way to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
+There could be ways to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
+
+That being said, in most use cases, this will not be a noticable issue.
