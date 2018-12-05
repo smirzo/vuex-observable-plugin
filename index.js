@@ -1,10 +1,9 @@
 /**
  * @name vuex-observable-plugin
  * @author smirzo
+ * @license MIT
  * @description
  * A plugin that adapts the popular redux-observable middleware to Vuex.
- * @version 0.1.0
- * @license MIT
  * @requires NPM:redux-observable
  * @requires NPM:clone
  * @requires NPM:fast-deep-equal
