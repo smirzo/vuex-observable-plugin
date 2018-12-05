@@ -93,7 +93,7 @@ The second argument passed to the epic is not only an observable of the `state$`
 
 #### Dispatching actions vs epics
 
-A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are asynchronous and running them both in parallel would result in race conditions and unpredictable behaviour.
+A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel would most often result in race conditions and unpredictable behaviour.
 
 ## Important performance relates notes
 
@@ -103,7 +103,7 @@ The plugin must therefore check if the state has actually changed on every dispa
 
 There could be ways to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
 
-That being said, in most use cases, this would not be a noticable issue.
+That being said, in most common use cases this would not manifest as an issue.
 
 ## License
 
