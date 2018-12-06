@@ -17,7 +17,7 @@ const { createEpicMiddleware, combineEpics, ofType } = require('redux-observable
 // Imports helper function to determin if the store has changed.
 const isEqual = require('fast-deep-equal');
 
-// Imorths helper function to deep clone the store.
+// Imports helper function to deep clone the store.
 const clone = require('clone');
 
 exports.VuexObservable = (epics = [], options = {}) => {
