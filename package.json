@@ -18,7 +18,10 @@
     "vue",
     "redux",
     "rxjs",
-    "middleware"
+    "middleware",
+    "redux-observable",
+    "vuex-observable",
+    "state"
   ],
   "author": "smirzo",
   "license": "MIT",
