@@ -2,6 +2,8 @@
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
 
+_Please note that this plugin has not yet been battle tested in a production setting and should therefore be used with caution in a mission-critical environment._
+
 ## Installation
 
 `npm i vuex-observable-plugin`
@@ -104,6 +106,10 @@ The plugin must therefore check if the state has actually changed on every dispa
 There could be ways to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
 
 That being said, in most common use cases this would not manifest as an issue.
+
+## Contributing
+
+Any help with contributing, finding solutions or in general improving the library would be very welcome.
 
 ## License
 
