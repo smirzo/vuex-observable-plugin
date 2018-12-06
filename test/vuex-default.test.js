@@ -30,28 +30,21 @@ describe('Default Vuex functionalities', () => {
   test('Sequential synchronous action properly change state', () => {
     store.dispatch(types.INCREMENT_NUMBER);
     store.dispatch(types.INCREMENT_NUMBER);
-    store.dispatch(types.INCREMENT_NUMBER);
-    store.dispatch(types.INCREMENT_NUMBER);
-    store.dispatch(types.INCREMENT_NUMBER);
-    expect(store.getters[types.NUMBER]).toEqual(7);
+    expect(store.getters[types.NUMBER]).toEqual(4);
   });
   test('Sequential mutations properly change state', () => {
     store.commit(types.SET_NUMBER, store.state.number + 1);
     store.commit(types.SET_NUMBER, store.state.number + 1);
-    store.commit(types.SET_NUMBER, store.state.number + 1);
-    store.commit(types.SET_NUMBER, store.state.number + 1);
-    store.commit(types.SET_NUMBER, store.state.number + 1);
-    expect(store.getters[types.NUMBER]).toEqual(12);
+    expect(store.getters[types.NUMBER]).toEqual(6);
   });
   test('Async actions properly mutate state', async () => {
     await store.dispatch(types.DOUBLE_NUMBER);
-    expect(store.getters[types.NUMBER]).toEqual(24);
+    expect(store.getters[types.NUMBER]).toEqual(12);
   });
   test('Multiple sequential async actions properly mutate state', async () => {
     store.dispatch(types.DOUBLE_NUMBER);
     store.dispatch(types.DOUBLE_NUMBER);
-    store.dispatch(types.DOUBLE_NUMBER);
     await store.dispatch(types.DOUBLE_NUMBER);
-    expect(store.getters[types.NUMBER]).toEqual(384);
+    expect(store.getters[types.NUMBER]).toEqual(96);
   });
 });
