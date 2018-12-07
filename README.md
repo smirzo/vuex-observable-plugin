@@ -1,8 +1,8 @@
 # Vuex Observable
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
-
 ![vuex-observable-image](./assets/vuex-observable-image.png)
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
 
