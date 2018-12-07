@@ -1,5 +1,7 @@
 # Vuex Observable
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+
 ![vuex-observable-image](./assets/vuex-observable-image.png)
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
@@ -9,6 +11,8 @@ _Please note that this plugin has not yet been battle tested in a production set
 ## Installation
 
 `npm i vuex-observable-plugin`
+
+`npm i rxjs@6.x.x` [As a peer dependency]
 
 ## Usage
 
