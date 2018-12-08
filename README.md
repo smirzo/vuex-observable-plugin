@@ -4,7 +4,7 @@
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 _Please note that this plugin has not yet been battle tested in a production setting and should therefore be used with caution in a mission-critical environment._
 
