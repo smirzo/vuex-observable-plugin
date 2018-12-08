@@ -1,7 +1,7 @@
-const store = require('./store-init.js');
+const createStore = require('./create-store.js');
+const store = createStore();
 const types = require('./types');
 
-// Tests
 describe('Default Vuex functionalities', () => {
   test('Store has been initialized', () => {
     expect(typeof store).toEqual('object');

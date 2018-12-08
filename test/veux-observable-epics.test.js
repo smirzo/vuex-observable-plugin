@@ -1,4 +1,5 @@
-const store = require('./store-init.js');
+const createStore = require('./create-store.js');
+const store = createStore();
 const types = require('./types');
 const sleep = time => new Promise(res => setTimeout(res, time));
 
@@ -51,5 +52,17 @@ describe('Vuex Observable epic functionalites', () => {
     store.commit(types.INTERVAL_OFF);
     await sleep(250);
     expect(store.state.number).toEqual(14);
+  });
+  test('Triggers another action as a result of a emitting an action from the epic', () => {
+    store.dispatch(types.TRIGGER_INCREMENT);
+    expect(store.state.number).toEqual(15);
+  });
+  test('Creates a store wihout any epics being passed', () => {
+    const storeWithoutEpics = createStore({ withoutEpics: true });
+    expect(storeWithoutEpics).toBeDefined();
+  });
+  test('Creates a store wihout any parameters being passed', () => {
+    const storeWithoutAnyParams = createStore({ withoutEpics: true, withoutOptions: true });
+    expect(storeWithoutAnyParams).toBeDefined();
   });
 });

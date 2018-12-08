@@ -29,6 +29,12 @@ exports.epics = [
       mapTo({ type: types.SET_NUMBER, payload: store$.value.state.number + 1 })
     );
   },
+  (action$, store$, { ofType, mapTo }) => {
+    return action$.pipe(
+      ofType(types.TRIGGER_INCREMENT),
+      mapTo({ type: types.INCREMENT_NUMBER, action: true })
+    );
+  },
   (action$, store$, { ofType, map }) => {
     return action$.pipe(
       ofType(types.DECREMENT_NUMBER),
@@ -47,12 +53,6 @@ exports.epics = [
     return action$.pipe(
       ofType(types.ADD_THREE),
       mapTo({ type: types.ADD_TO_NUMBER, payload: 3 })
-    );
-  },
-  (action$, store$, { ofType, map, tap }) => {
-    return action$.pipe(
-      ofType(types.CHECK_PERFORMANCE),
-      map(({ payload }) => ({ type: types.CHANGE_OBJECT, payload }))
     );
   },
   (action$, store$, { ofType, switchMap, interval, distinctUntilChanged, mapTo, takeUntil, map, skip }) => {
@@ -79,9 +79,6 @@ exports.mutations = {
   [types.SET_DATA]: (state, data) => (state.data = data),
   [types.SET_NUMBER]: (state, number) => (state.number = number),
   [types.ADD_TO_NUMBER]: (state, value) => (state.number = state.number + value),
-  [types.CHANGE_OBJECT]: (state, obj) => {
-    state.obj = obj;
-  },
   [types.INTERVAL_OFF]: state => {
     state.interval = !state.interval;
   }
