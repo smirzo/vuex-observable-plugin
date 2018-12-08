@@ -1,5 +1,5 @@
 {
-  "name": "@smirzo/vuex-observable-plugin",
+  "name": "vuex-observable-plugin",
   "version": "0.1.2",
   "description": "A plugin that adapts the popular redux-observable middleware to Vuex.",
   "main": "index.js",
