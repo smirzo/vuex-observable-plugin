@@ -17,6 +17,8 @@ _Please note that this plugin has not yet been battle tested in a production set
 
 `npm i rxjs@6.x.x`
 
+_Your project should contain rxjs (version 6 or above) as redux-observable requires it as a peer dependency._
+
 ## Usage
 
 ```js
