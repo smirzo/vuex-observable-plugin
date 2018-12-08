@@ -14,7 +14,7 @@
 // Imports all redux-observable related methods.
 const { createEpicMiddleware, combineEpics, ofType } = require('redux-observable');
 
-// Imports helper function to determin if the store has changed.
+// Imports helper function to determine if the store has changed.
 const isEqual = require('fast-deep-equal');
 
 // Imports helper function to deep clone the store.
