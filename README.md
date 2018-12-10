@@ -4,6 +4,7 @@
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
 
+[![CircleCI](https://circleci.com/gh/smirzo/vuex-observable-plugin.svg?style=svg)](https://circleci.com/gh/smirzo/vuex-observable-plugin)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
