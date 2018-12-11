@@ -6,7 +6,9 @@ A plugin that adapts the popular [redux-observable](https://redux-observable.js.
 
 [![CircleCI](https://circleci.com/gh/smirzo/vuex-observable-plugin.svg?style=svg)](https://circleci.com/gh/smirzo/vuex-observable-plugin)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![npm downloads](https://img.shields.io/npm/dm/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
+[![npm version](https://img.shields.io/npm/v/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/smirzo/vuex-observable-plugin#license)
 
 _Please note that this plugin has not yet been battle tested in a production setting and should therefore be used with caution in a mission-critical environment._
 
