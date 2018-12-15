@@ -63,7 +63,7 @@ exports.VuexObservable = (epics = [], options = {}) => {
     store.__dispatchEpic = epicMiddleware(storeModel)(next);
     // Sets up a listener for mutations in order to update the store
     // stream even when an epic hasn't been dispatched.
-    store.subscribe(mutation => store.__dispatchEpic({ type: '__STATE_CHANGED' }));
+    store.subscribe(mutation => store.__dispatchEpic({ type: '__STATE_CHANGED__' }));
     // Runs the middleware with the root epic.
     epicMiddleware.run(rootEpic);
   };
