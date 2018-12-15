@@ -109,17 +109,17 @@ The second argument passed to the epic is not only an observable of the `state$`
 
 #### Dispatching actions vs epics
 
-A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel would most often result in race conditions and unpredictable behaviour.
+A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel could often result in race conditions and unpredictable behaviour that is hard to test.
 
-## Important performance relates notes
+## Important performance related notes
 
 When the state gets very large (thousands of object) or if state mutations happen extremely often, then the store might start suffering in performance. This is due to the state mutability differences between _Vuex_ and _Redux_ (Vuex's state is mutable while Redux's is not).
 
-The plugin must therefore check if the state has actually changed on every dispatched epic in order to conform to the _redux-observable_ api, which will expect a new object reference if the state has actually changed (so it can emit a store stream event).
+The plugin must therefore check if the state has actually changed on every dispatched epic and mutation in order to conform to the _redux-observable_ api, which will expect a new object reference if the state has actually changed (so it can emit a new store stream event).
 
 There could be ways to avoid this by editing the _redux-observable_ source itself, but that would mean forgoing all the automatic bug fixes, testing and updates _redux-observable_ already receives.
 
-That being said, in most common use cases this would not manifest as an issue.
+That being said, in most use cases this would never manifest as an issue.
 
 ## Contributing
 
