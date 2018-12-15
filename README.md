@@ -1,6 +1,6 @@
 # Vuex Observable
 
-![vuex-observable-image](./assets/vuex-observable-image.png)
+![vuex-observable-image](https://raw.githubusercontent.com/smirzo/vuex-observable-plugin/master/assets/vuex-observable-image.png)
 
 A plugin that adapts the popular [redux-observable](https://redux-observable.js.org/) middleware to Vuex.
 
