@@ -35,6 +35,9 @@
     "fast-deep-equal": "^2.0.1",
     "redux-observable": "^1.0.0"
   },
+  "peerDependencies": {
+    "rxjs": ">=6.0.0-beta.0 <7"
+  },
   "devDependencies": {
     "jest": "^23.6.0",
     "rxjs": "^6.3.3",
