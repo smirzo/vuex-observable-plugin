@@ -4,3 +4,4 @@ extra
 assets
 coverage
 .circleci
+example

@@ -1,0 +1,30 @@
+{
+  "name": "vuex-observable-plugin-example",
+  "version": "0.1.0",
+  "description": "A simple example project using vuex-observable-plugin.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "vuex",
+    "observable",
+    "redux"
+  ],
+  "author": "smirzo",
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.3.1",
+    "parcel-bundler": "^1.11.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.3",
+    "vue": "^2.5.21",
+    "vue-hot-reload-api": "^2.3.1",
+    "vuex": "^3.0.1",
+    "vuex-observable-plugin": "^0.1.10"
+  }
+}
