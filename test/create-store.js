@@ -1,14 +1,14 @@
 // Imports packages.
-const Vue = require('vue');
-const Vuex = require('vuex');
-const { VuexObservable } = require('../index');
+const Vue = require('vue')
+const Vuex = require('vuex')
+const { VuexObservable } = require('../index')
 
 // Imports store.
-const { actions, mutations, state, getters, epics } = require('./store');
+const { actions, mutations, state, getters, epics } = require('./store')
 
 // Imports operators.
-const { ofType } = require('../index');
-const { from, interval } = require('rxjs');
+const { ofType } = require('../index')
+const { from, interval } = require('rxjs')
 const {
   filter,
   switchMap,
@@ -18,7 +18,7 @@ const {
   takeUntil,
   distinctUntilChanged,
   skip
-} = require('rxjs/operators');
+} = require('rxjs/operators')
 
 const options = {
   dependencies: {
@@ -34,10 +34,10 @@ const options = {
     distinctUntilChanged,
     skip
   }
-};
+}
 
 // Initializes store.
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 const createStore = ({ withoutEpics, withoutOptions } = {}) =>
   new Vuex.Store({
@@ -46,6 +46,6 @@ const createStore = ({ withoutEpics, withoutOptions } = {}) =>
     state,
     getters,
     plugins: [VuexObservable(withoutEpics ? undefined : epics, withoutOptions ? undefined : options)]
-  });
+  })
 
-module.exports = createStore;
+module.exports = createStore
