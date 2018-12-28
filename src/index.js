@@ -9,18 +9,16 @@
  * @requires NPM:fast-deep-equal
  */
 
-'use-strict'
-
 // Imports all redux-observable related methods.
-const { createEpicMiddleware, combineEpics, ofType } = require('redux-observable')
+import { createEpicMiddleware, combineEpics } from 'redux-observable'
 
 // Imports helper function to determine if the store has changed.
-const isEqual = require('fast-deep-equal')
+import isEqual from 'fast-deep-equal'
 
 // Imports helper function to deep clone the store.
-const clone = require('clone')
+import clone from 'clone'
 
-exports.VuexObservable = (epics = [], options = {}) => {
+export const VuexObservable = (epics = [], options = {}) => {
   // Instantiates the epic middleware.
   const epicMiddleware = createEpicMiddleware(options)
   // Combines the user passed epics into a single root epic.
@@ -68,4 +66,4 @@ exports.VuexObservable = (epics = [], options = {}) => {
   }
 }
 
-exports.ofType = ofType
+export { ofType } from 'redux-observable'

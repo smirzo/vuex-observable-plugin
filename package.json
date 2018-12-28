@@ -2,12 +2,13 @@
   "name": "vuex-observable-plugin",
   "version": "0.1.10",
   "description": "A plugin that adapts the popular redux-observable middleware to Vuex.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
     "coverage": "jest --coverage",
-    "lint": "eslint index.js && eslint test",
+    "lint": "eslint src/index.js && eslint test",
+    "build": "babel src -d dist",
     "example": "cd example && npm run example"
   },
   "repository": {
@@ -41,6 +42,9 @@
     "rxjs": ">=6.0.0-beta.0 <7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "eslint": "^5.11.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
