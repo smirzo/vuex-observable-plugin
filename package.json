@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "lint": "eslint index.js && eslint test"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,12 @@
     "rxjs": ">=6.0.0-beta.0 <7"
   },
   "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
