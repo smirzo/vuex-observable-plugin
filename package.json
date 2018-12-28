@@ -7,7 +7,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "coverage": "jest --coverage",
-    "lint": "eslint index.js && eslint test"
+    "lint": "eslint index.js && eslint test",
+    "example": "cd example && npm start"
   },
   "repository": {
     "type": "git",
