@@ -46,7 +46,7 @@ const store = new Vuex.Store({
 
 To see a working example you can either:
 
-- Check it out online on Codesandbox (coming soon).
+- Check it out online on Codesandbox by clicking [here](https://codesandbox.io/s/github/smirzo/vuex-observable-plugin/tree/master/example).
 
 - Follow the simple [instructions](https://github.com/smirzo/vuex-observable-plugin/tree/master/example) to run it locally.
 

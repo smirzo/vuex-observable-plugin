@@ -6,7 +6,7 @@ A simple example project using the vuex-observable-plugin with Vuex.
 
 ## Online
 
-You can check out this example project on _Codesandbox_ (coming soon).
+To check out this example project on Codesandbox click [here](https://codesandbox.io/s/github/smirzo/vuex-observable-plugin/tree/master/example).
 
 ## Locally
 
