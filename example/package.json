@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "example": "parcel index.html"
+    "example": "npm i && parcel index.html"
   },
   "keywords": [
     "vuex",
