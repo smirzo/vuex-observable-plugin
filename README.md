@@ -38,9 +38,17 @@ const store = new Vuex.Store({
   mutations,
   state,
   getters,
-  plugins: [VuexObservable(epics, { dependencies: { ofType } })]
+  plugins: [VuexObservable(epics, { dependencies: { ofType } })],
 });
 ```
+
+## Examples
+
+To see a working example you can either:
+
+- Check it out online on Codesanbox (coming soon).
+
+- Follow the simple [instructions](https://github.com/smirzo/vuex-observable-plugin/tree/master/example) to run it locally.
 
 ## API
 
@@ -76,7 +84,7 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 (action$, store$, { ofType, mapTo }) =>
   action$.pipe(
     ofType('SOME_ACTION'),
-    mapTo({ type: 'SOME_MUTATION' })
+    mapTo({ type: 'SOME_MUTATION' }),
   );
 
 // => Triggers the mutation 'SOME_MUATATION'
@@ -86,7 +94,7 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 (action$, store$, { ofType, mapTo }) =>
   action$.pipe(
     ofType('SOME_ACTION'),
-    mapTo({ type: 'SOME_OTHER_ACTION', action: true })
+    mapTo({ type: 'SOME_OTHER_ACTION', action: true }),
   );
 
 // => Triggers the action 'SOME_OTHER_ACTION'
@@ -102,8 +110,8 @@ The second argument passed to the epic is not only an observable of the `state$`
     ofType('SOME_ACTION'),
     map(payload => ({
       type: 'SOME_MUTATION',
-      payload: store$.value.state.number * store$.value.getters['COMPUTED_NUMBER'] * payload
-    }))
+      payload: store$.value.state.number * store$.value.getters['COMPUTED_NUMBER'] * payload,
+    })),
   );
 ```
 
