@@ -1,17 +1,24 @@
 {
   "name": "vuex-observable-plugin-example",
   "version": "0.1.0",
-  "description": "A simple example project using vuex-observable-plugin.",
+  "description": "A simple example project using the vuex-observable-plugin with Vuex.",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "example": "parcel index.html"
   },
   "keywords": [
-    "example",
     "vuex",
     "observable",
-    "redux"
+    "plugin",
+    "vue",
+    "redux",
+    "rxjs",
+    "middleware",
+    "redux-observable",
+    "vuex-observable",
+    "state",
+    "example"
   ],
   "author": "smirzo",
   "license": "MIT",
