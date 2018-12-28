@@ -9,14 +9,14 @@
   },
   "keywords": [
     "vuex",
-    "observable",
-    "plugin",
+    "redux-observable",
     "vue",
+    "plugin",
+    "vuex-observable",
+    "observable",
     "redux",
     "rxjs",
     "middleware",
-    "redux-observable",
-    "vuex-observable",
     "state",
     "example"
   ],
