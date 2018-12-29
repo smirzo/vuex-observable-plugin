@@ -1,13 +1,13 @@
 // Imports packages.
 const Vue = require('vue')
 const Vuex = require('vuex')
-const { VuexObservable } = require('../dist/index')
+const { VuexObservable } = require('../src/index')
 
 // Imports store.
 const { actions, mutations, state, getters, epics } = require('./store')
 
 // Imports operators.
-const { ofType } = require('../dist/index')
+const { ofType } = require('../src/index')
 const { from, interval } = require('rxjs')
 const {
   filter,
