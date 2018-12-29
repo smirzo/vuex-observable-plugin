@@ -4,8 +4,8 @@
   "description": "A simple example project using the vuex-observable-plugin with Vuex.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "example": "npm i && parcel index.html"
+    "start": "npm run example",
+    "example": "npm i && npm i vuex-observable-plugin@latest && parcel index.html"
   },
   "keywords": [
     "vuex",
@@ -23,6 +23,7 @@
   "author": "smirzo",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
     "@vue/component-compiler-utils": "^2.3.1",
     "parcel-bundler": "^1.11.0",
     "vue-template-compiler": "^2.5.21"
@@ -32,6 +33,6 @@
     "vue": "^2.5.21",
     "vue-hot-reload-api": "^2.3.1",
     "vuex": "^3.0.1",
-    "vuex-observable-plugin": "^0.1.10"
+    "vuex-observable-plugin": "^0.1.11"
   }
 }
