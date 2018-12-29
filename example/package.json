@@ -23,7 +23,6 @@
   "author": "smirzo",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
     "@vue/component-compiler-utils": "^2.3.1",
     "parcel-bundler": "^1.11.0",
     "vue-template-compiler": "^2.5.21"
