@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { VuexObservable, ofType } from 'vuex-observable-plugin'
-import { interval } from 'rxjs'
+import { timer } from 'rxjs'
 import { map, switchMap, takeUntil } from 'rxjs/operators'
 
 // Defines epic.
@@ -11,8 +11,8 @@ const epics = [
     return action$.pipe(
       ofType('START_STREAMING_NUMBERS'),
       switchMap(() => {
-        return interval(1000).pipe(
-          map(() => ({ type: 'SET_NUMBER', payload: Math.random() })),
+        return timer(0, 50).pipe(
+          map(() => ({ type: 'SET_NUMBER', payload: Math.random().toFixed(5) })),
           takeUntil(action$.pipe(ofType('STOP_STREAMING_NUMBERS')))
         )
       })
@@ -38,7 +38,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state,
   mutations,
-  plugins: [VuexObservable(epics, { dependencies: { ofType, map, switchMap, takeUntil, interval } })]
+  plugins: [VuexObservable(epics, { dependencies: { ofType, map, switchMap, takeUntil, timer } })]
 })
 
 // Exports store.
