@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run example",
-    "example": "npm i && npm i vuex-observable-plugin@latest && parcel index.html"
+    "example": "npm i && npm update && parcel index.html"
   },
   "keywords": [
     "vuex",
@@ -33,6 +33,6 @@
     "vue": "^2.5.21",
     "vue-hot-reload-api": "^2.3.1",
     "vuex": "^3.0.1",
-    "vuex-observable-plugin": "^0.1.11"
+    "vuex-observable-plugin": "latest"
   }
 }
