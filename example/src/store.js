@@ -7,7 +7,7 @@ import { map, switchMap, takeUntil } from 'rxjs/operators'
 
 // Defines epic.
 const epics = [
-  (action$, $store, { ofType, map, switchMap, takeUntil }) => {
+  (action$, store$, { ofType, map, switchMap, takeUntil }) => {
     return action$.pipe(
       ofType('START_STREAMING_NUMBERS'),
       switchMap(() => {
