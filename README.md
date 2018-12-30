@@ -54,9 +54,11 @@ To see a working example you can either:
 
 **VuexObservable(epics, options)**
 
+The main function that creates the plugin instance.
+
 - **epics**
 
-  Description: An array containing all the epics.
+  Description: An array containing all the [epics](https://redux-observable.js.org/docs/basics/Epics.html).
 
   Type: `Array`
 
@@ -69,6 +71,18 @@ To see a working example you can either:
   Type: `Object`
 
   Example: `{ dependencies: { http } }`
+
+**ofType(actionType)**
+
+A helper operator for filtering the action stream by specific action type(s).
+
+- **actionType**
+
+  Description: An action type string or an array of action type strings to filter the stream by. More info abou this operator can be found [here](https://github.com/redux-observable/redux-observable/blob/master/docs/basics/Epics.md#a-basic-example).
+
+  Type: `string | string[]`
+
+  Example: `ofType('SOME_ACTION')`
 
 ## Differences between vuex-observable and redux-observable
 
