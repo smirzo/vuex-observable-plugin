@@ -78,7 +78,7 @@ A helper operator for filtering the action stream by specific action type(s).
 
 - **actionType**
 
-  Description: An action type string or an array of action type strings to filter the stream by. More info abou this operator can be found [here](https://github.com/redux-observable/redux-observable/blob/master/docs/basics/Epics.md#a-basic-example).
+  Description: An action type string or an array of action type strings to filter the stream by. More info about this operator can be found [here](https://github.com/redux-observable/redux-observable/blob/master/docs/basics/Epics.md#a-basic-example).
 
   Type: `string | string[]`
 
