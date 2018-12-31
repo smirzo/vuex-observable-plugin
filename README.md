@@ -24,6 +24,8 @@ _Your project should contain rxjs (version 6 or above) as redux-observable requi
 
 ## Usage
 
+[![Edit example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/smirzo/vuex-observable-plugin/tree/master/example)
+
 ```js
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -46,9 +48,9 @@ const store = new Vuex.Store({
 
 To see a working example you can either:
 
-- Check it out online on Codesandbox by clicking [here](https://codesandbox.io/s/github/smirzo/vuex-observable-plugin/tree/master/example).
+- Check it out online on _CodeSandbox_ by clicking [here](https://codesandbox.io/s/github/smirzo/vuex-observable-plugin/tree/master/example).
 
-- Follow the simple [instructions](https://github.com/smirzo/vuex-observable-plugin/tree/master/example) to run it locally.
+- Follow these simple [instructions](https://github.com/smirzo/vuex-observable-plugin/tree/master/example) to run it locally.
 
 ## API
 
