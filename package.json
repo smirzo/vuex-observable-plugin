@@ -59,7 +59,7 @@
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
   },
-  "runkitExample": "runkit.js",
+  "runkitExampleFilename": "runkit.js",
   "files": [
     "dist",
     "LICENSE",
