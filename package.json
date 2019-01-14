@@ -2,7 +2,7 @@
   "name": "vuex-observable-plugin",
   "version": "0.2.6",
   "description": "A plugin that adapts the popular redux-observable middleware to Vuex.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
