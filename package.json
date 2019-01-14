@@ -8,7 +8,7 @@
     "test:watch": "jest --watchAll",
     "coverage": "jest --coverage",
     "lint": "eslint src/index.js && eslint test",
-    "build": "babel src -d dist",
+    "build": "babel src -d lib",
     "example": "cd example && npm run example",
     "prepublishOnly": "npm run lint && npm run coverage && npm run build"
   },
@@ -61,7 +61,7 @@
   },
   "runkitExampleFilename": "runkit.js",
   "files": [
-    "dist",
+    "lib",
     "LICENSE",
     "package.json",
     "README.md",
