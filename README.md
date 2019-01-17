@@ -90,9 +90,9 @@ There are however a couple of differences to the original API due to the inheren
 
 #### Epic's Outputs
 
-![epics-output](./assets/epics-output.png)
-
 By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
+
+![epics-output](./assets/epics-output.png)
 
 ```js
 ;(action$, store$, { ofType, mapTo }) =>
