@@ -25,13 +25,13 @@ _Your project should contain rxjs (version 6 or above) as redux-observable requi
 ## Usage
 
 ```js
-import Vue from 'vue'
-import Vuex from 'vuex'
-import { VuexObservable, ofType } from 'vuex-observable-plugin'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { VuexObservable, ofType } from 'vuex-observable-plugin';
 
-import { actions, mutations, state, getters, epics } from './store'
+import { actions, mutations, state, getters, epics } from './store';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   actions,
@@ -39,7 +39,7 @@ const store = new Vuex.Store({
   state,
   getters,
   plugins: [VuexObservable(epics, { dependencies: { ofType } })],
-})
+});
 ```
 
 ## Examples
@@ -95,21 +95,21 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 ![epics-output](./assets/epics-output.png)
 
 ```js
-;(action$, store$, { ofType, mapTo }) =>
+(action$, store$, { ofType, mapTo }) =>
   action$.pipe(
     ofType('SOME_ACTION'),
     mapTo({ type: 'SOME_MUTATION' }),
-  )
+  );
 
 // => Triggers the mutation 'SOME_MUATATION'
 ```
 
 ```js
-;(action$, store$, { ofType, mapTo }) =>
+(action$, store$, { ofType, mapTo }) =>
   action$.pipe(
     ofType('SOME_ACTION'),
     mapTo({ type: 'SOME_OTHER_ACTION', action: true }),
-  )
+  );
 
 // => Triggers the action 'SOME_OTHER_ACTION'
 ```
@@ -119,14 +119,14 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 The second argument passed to the epic is not only an observable of the `state$` but the `store$`, which contains both the _state_ and _getters_. For instance:
 
 ```js
-;(action$, store$, { ofType, map }) =>
+(action$, store$, { ofType, map }) =>
   action$.pipe(
     ofType('SOME_ACTION'),
     map(payload => ({
       type: 'SOME_MUTATION',
       payload: store$.value.state.number * store$.value.getters['COMPUTED_NUMBER'] * payload,
     })),
-  )
+  );
 ```
 
 #### Dispatching actions vs epics
