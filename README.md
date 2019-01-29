@@ -92,7 +92,7 @@ There are however a couple of differences to the original API due to the inheren
 
 By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
 
-<img src="https://raw.githubusercontent.com/smirzo/vuex-observable-plugin/master/assets/epics-output-resized.png" width="500px">
+<img src="https://raw.githubusercontent.com/smirzo/vuex-observable-plugin/master/assets/epics-output-resized.png" width="600px">
 
 ```js
 (action$, store$, { ofType, mapTo }) =>
