@@ -25,7 +25,7 @@ export const VuexObservable = (epics = [], options = {}) => {
   const rootEpic = combineEpics(...epics)
   // Creates the main Vuex plugin function.
   return store => {
-    // Replaces the default dispatch method with a function that passes undefined actions throught to epics.
+    // Replaces the default dispatch method with a function that passes undefined actions through to epics.
     const dispatch = store.dispatch
     store.dispatch = (type, payload) => {
       if (store._actions[type]) {
@@ -56,7 +56,7 @@ export const VuexObservable = (epics = [], options = {}) => {
     }
     // Creates a placeholder 'next' function for passing to the redux-observable middleware.
     const next = action => action
-    // Instanitates the redux-observable middleware and returns a function that can trigger the middleware.
+    // Instantiates the redux-observable middleware and returns a function that can trigger the middleware.
     store.__dispatchEpic = epicMiddleware(storeModel)(next)
     // Sets up a listener for mutations in order to update the store
     // stream even when an epic hasn't been dispatched.
