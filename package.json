@@ -8,7 +8,7 @@
     "test:watch": "jest --watchAll",
     "coverage": "jest --coverage",
     "lint": "eslint src/index.js && eslint test",
-    "version:patch": "npm version patch && git push --tags",
+    "version:patch": "npm version patch && git push && git push --tags",
     "build": "babel src -d lib",
     "example": "cd example && npm run example",
     "prepublishOnly": "npm run lint && npm run coverage && npm run build"
