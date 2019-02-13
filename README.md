@@ -6,8 +6,8 @@ A plugin that adapts the popular [redux-observable](https://redux-observable.js.
 
 [![CircleCI](https://circleci.com/gh/smirzo/vuex-observable-plugin.svg?style=svg)](https://circleci.com/gh/smirzo/vuex-observable-plugin)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
-[![npm downloads](https://img.shields.io/npm/dm/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
-[![npm version](https://img.shields.io/npm/v/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
+[![Downloads](https://img.shields.io/npm/dm/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
+[![Version](https://img.shields.io/npm/v/vuex-observable-plugin.svg)](https://www.npmjs.com/package/vuex-observable-plugin)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/smirzo/vuex-observable-plugin#license)
 
 _Please note that this plugin has not yet been battle tested in a production setting and should therefore be used with caution in a mission-critical environment._
@@ -88,7 +88,7 @@ This plugin aims to preserve the API of _redux-observable_ and therefore most of
 
 There are however a couple of differences to the original API due to the inherent architectural difference between _Vuex_ and _Redux_:
 
-#### Epic's Outputs
+#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Epic's Outputs
 
 By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
 
@@ -114,7 +114,7 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 // => Triggers the action 'SOME_OTHER_ACTION'
 ```
 
-#### Store stream
+#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Store stream
 
 The second argument passed to the epic is not only an observable of the `state$` but the `store$`, which contains both the _state_ and _getters_. For instance:
 
@@ -129,7 +129,7 @@ The second argument passed to the epic is not only an observable of the `state$`
   );
 ```
 
-#### Dispatching actions vs epics
+#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Dispatching actions vs epics
 
 A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel could often result in race conditions and unpredictable behaviour that is hard to test.
 
