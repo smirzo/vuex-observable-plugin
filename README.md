@@ -54,7 +54,7 @@ To see a working example you can check it out online on [CodeSandbox](https://co
 
 The main function that creates the plugin instance.
 
-- ![#DF1A8D](https://placehold.it/15/DF1A8D/000000?text=+) **epics**
+- **epics**
 
   Description: An array containing all the [epics](https://redux-observable.js.org/docs/basics/Epics.html).
 
@@ -62,7 +62,7 @@ The main function that creates the plugin instance.
 
   Example: `[someEpic, someOtherEpic]`
 
-- ![#DF1A8D](https://placehold.it/15/DF1A8D/000000?text=+) **options**
+- **options**
 
   Description: Options passed to the observable middleware (mostly used for dependency injection). More info about the options can be found [here](https://redux-observable.js.org/docs/api/createEpicMiddleware.html).
 
@@ -74,7 +74,7 @@ The main function that creates the plugin instance.
 
 A helper operator for filtering the action stream by specific action type(s).
 
-- ![#DF1A8D](https://placehold.it/15/DF1A8D/000000?text=+) **actionType**
+- **actionType**
 
   Description: An action type string or an array of action type strings to filter the stream by. More info about this operator can be found [here](https://github.com/redux-observable/redux-observable/blob/master/docs/basics/Epics.md#a-basic-example).
 
