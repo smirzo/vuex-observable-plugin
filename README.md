@@ -133,7 +133,7 @@ The second argument passed to the epic is not only an observable of the `state$`
 
 A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel could often result in race conditions and unpredictable behaviour that is hard to test.
 
-## Important performance related notes
+## Performance related notes
 
 When the state gets very large (thousands of object) or if state mutations happen extremely often, then the store might start suffering in performance. This is due to the state mutability differences between _Vuex_ and _Redux_ (Vuex's state is mutable while Redux's is not).
 
