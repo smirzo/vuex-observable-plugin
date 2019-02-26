@@ -47,4 +47,8 @@ describe('Default Vuex functionalities', () => {
     await store.dispatch(types.DOUBLE_NUMBER)
     expect(store.getters[types.NUMBER]).toEqual(96)
   })
+  test('Proxys an epic via an action', () => {
+    store.dispatch(types.PROXY_INCREMENT)
+    expect(store.getters[types.NUMBER]).toEqual(95)
+  })
 })
