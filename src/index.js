@@ -59,7 +59,9 @@ export const VuexObservable = (epics = [], options = {}) => {
     // This is done as to prevent the 'unknown-action-type' error when dispatching inside of an action.
     store._actions = new Proxy(store._actions, {
       get (actions, type) {
-        return actions[type] || [payload => store.__dispatchEpic({ type, payload })]
+        return (
+          actions[type] || [payload => Promise.resolve(store.__dispatchEpic({ type, payload }))]
+        )
       }
     })
   }
