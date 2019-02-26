@@ -25,14 +25,6 @@ export const VuexObservable = (epics = [], options = {}) => {
   const rootEpic = combineEpics(...epics)
   // Creates the main Vuex plugin function.
   return store => {
-    // Replaces the default dispatch method with a function that passes undefined actions through to epics.
-    const dispatch = store.dispatch
-    store.dispatch = (type, payload) => {
-      if (store._actions[type]) {
-        return dispatch(type, payload)
-      }
-      return store.__dispatchEpic({ type, payload })
-    }
     // Defines a store model that conforms to the redux-observable middleware api.
     const storeModel = {
       // Returns a new, deep cloned, object reference if state has changed in order to
@@ -63,6 +55,13 @@ export const VuexObservable = (epics = [], options = {}) => {
     store.subscribe(mutation => store.__dispatchEpic({ type: '__STATE_CHANGED__' }))
     // Runs the middleware with the root epic.
     epicMiddleware.run(rootEpic)
+    // Intercepts the actions in order to initialize undefined actions as epic dispatchers.
+    // This is done as to prevent the 'unknown-action-type' error when dispatching inside of an action.
+    store._actions = new Proxy(store._actions, {
+      get (actions, type) {
+        return actions[type] || [payload => store.__dispatchEpic({ type, payload })]
+      }
+    })
   }
 }
 
