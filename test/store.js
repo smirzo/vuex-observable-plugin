@@ -9,6 +9,9 @@ exports.actions = {
   [types.DOUBLE_NUMBER]: async ({ commit, state }) => {
     await sleep(0)
     return commit(types.SET_NUMBER, state.number * 2)
+  },
+  [types.PROXY_INCREMENT]: ({ dispatch }) => {
+    dispatch(types.DECREMENT_NUMBER)
   }
 }
 
@@ -55,7 +58,11 @@ exports.epics = [
       mapTo({ type: types.ADD_TO_NUMBER, payload: 3 })
     )
   },
-  (action$, store$, { ofType, switchMap, interval, distinctUntilChanged, mapTo, takeUntil, map, skip }) => {
+  (
+    action$,
+    store$,
+    { ofType, switchMap, interval, distinctUntilChanged, mapTo, takeUntil, map, skip }
+  ) => {
     return action$.pipe(
       ofType(types.START_INTERVAL),
       switchMap(() => {
