@@ -1,6 +1,6 @@
 {
   "name": "vuex-observable-plugin",
-  "version": "0.2.16",
+  "version": "0.3.0",
   "description": "A plugin that adapts the popular redux-observable middleware to Vuex.",
   "main": "lib/index.js",
   "scripts": {
