@@ -50,7 +50,7 @@ To see a working example you can check it out online on [CodeSandbox](https://co
 
 ## API
 
-![#40B883](https://placehold.it/15/40B883/000000?text=+) **VuexObservable(epics, options)**
+##### `VuexObservable(epics, options)`
 
 The main function that creates the plugin instance.
 
@@ -70,7 +70,7 @@ The main function that creates the plugin instance.
 
   Example: `{ dependencies: { http } }`
 
-![#40B883](https://placehold.it/15/40B883/000000?text=+) **ofType(actionType)**
+##### `ofType(actionType)`
 
 A helper operator for filtering the action stream by specific action type(s).
 
@@ -88,7 +88,7 @@ This plugin aims to preserve the API of _redux-observable_ and therefore most of
 
 There are however a couple of differences to the original API due to the inherent architectural difference between _Vuex_ and _Redux_:
 
-#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Epic's Outputs
+#### `Epic's Outputs`
 
 By default, the epics receive an _action_ as input and return a _mutation_ as output. It is also possible to return an _action_ as output by simply specifying a third `action` parameter in the returned object. For example:
 
@@ -114,7 +114,7 @@ By default, the epics receive an _action_ as input and return a _mutation_ as ou
 // => Triggers the action 'SOME_OTHER_ACTION'
 ```
 
-#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Store stream
+#### `Store stream`
 
 The second argument passed to the epic is not only an observable of the `state$` but the `store$`, which contains both the _state_ and _getters_. For instance:
 
@@ -129,7 +129,7 @@ The second argument passed to the epic is not only an observable of the `state$`
   );
 ```
 
-#### ![#40B883](https://placehold.it/15/40B883/000000?text=+) Dispatching actions vs epics
+#### `Dispatching actions vs epics`
 
 A dispatched action is either passed to an action or an epic, but never to both at the same time.<br/><br/>Whenever an action with the dispatched type is available, it will be passed to the standard Vuex action handler with the matching type name and it will not reach the epics. However, when an action with the dispacthed type has not been registered, it will be passed on to be handled by the root epic. <br/><br/>This is because both actions and epics are usually asynchronous and running them both in parallel could often result in race conditions and unpredictable behaviour that is hard to test.
 
